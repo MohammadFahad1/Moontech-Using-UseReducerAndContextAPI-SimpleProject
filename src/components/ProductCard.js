@@ -1,21 +1,21 @@
 import React from "react";
 import { BiListPlus } from "react-icons/bi";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
 
   return (
     <div
       className='shadow-lg rounded-3xl border  p-3 flex flex-col text-indigo-900'
-      key="{product._id}"
+      key={product._id}
     >
       <div className='h-52 w-52 mx-auto'>
-        <img src="{product.image}" alt="{product.model}" />
+        <img src={product.image} alt={product.model} />
       </div>
-      <h1 className='font-bold text-center'>Model Product</h1>
-      <p className='text-center font-semibold mb-3'>Rating: Product Rating</p>
+      <h1 className='font-bold text-center'>{product.model}</h1>
+      <p className='text-center font-semibold mb-3'>Rating: {product.rating}</p>
       <div className=' flex-1'>
         <ul className='space-y-2'>
-          <li className='text-sm '>vbcb</li>
+          <li className='text-sm '><b>Price: </b>{product.price}</li>
         </ul>
       </div>
       <div className='flex gap-2 mt-5'>
